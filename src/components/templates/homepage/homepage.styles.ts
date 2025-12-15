@@ -40,11 +40,21 @@ export const WrapperText = styled.div`
   }
 
   h1 {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 
   p {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+  }
+
+  @media screen and (min-width: 992px) {
+    h1 {
+      font-size: 3rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+    }
   }
 `;
 
@@ -84,7 +94,7 @@ export const PictureBarbershopWrapper = styled.div`
 
 export const TitlePicture = styled.h1`
   color: white;
-  margin-top: 10px;
+  margin-top: 30px;
   z-index: 20;
   font-size: 30px;
 
@@ -99,13 +109,13 @@ export const TitlePicture = styled.h1`
 `;
 export const TitleService = styled.h1`
   margin-top: 30px;
-  font-size: 38px;
+  font-size: 31px;
   text-align: center;
   font-weight: 800;
 
   @media screen and (min-width: 1200px) {
     margin-top: 30px;
-    font-size: 50px;
+    font-size: 50px !important;
   }
 `;
 
@@ -113,13 +123,17 @@ export const WrapperServices = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 10px 3px;
+
+  h1 {
+    font-size: 1.5rem !important;
+  }
 
   @media screen and (min-width: 1200px) {
     padding: 80px 500px;
 
     h1 {
-      font-size: 1.9rem;
+      font-size: 1.9rem !important;
       text-align: center;
     }
   }

@@ -8,35 +8,20 @@ import * as S from "./homepage.styles";
 import { Section } from "../../molecules/section/section";
 import { Flex } from "../../../styles/commonStyles";
 import { pictures, services } from "../../../utils/utils";
-import { useEffect, useRef } from "react";
-import { useHeaderContext } from "../../../context/HeaderContext";
 import { useScreenSizeConfig } from "./hooks/useScreenSizeConfig";
-
-type SectionKey = "services" | "pictures" | "map" | "contact";
+import { useSection } from "./hooks/useSection";
 
 export const Homepage = () => {
   const { title, subtitle } = constants;
-  const { tab } = useHeaderContext();
-  const sectionsRef = useRef<Record<SectionKey, HTMLDivElement | null>>({
-    services: null,
-    pictures: null,
-    map: null,
-    contact: null,
-  });
 
-  useEffect(() => {
-    sectionsRef.current[tab]?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  }, [tab]);
+  const { height } = useScreenSizeConfig();
 
-  const { screenY } = useScreenSizeConfig();
+  const { sectionsRef } = useSection();
 
   return (
     <Layout title={title} subtitle={subtitle}>
       <Section
-        height={screenY.services}
+        height={height.services}
         classname="section-services"
         sectionRef={(el) => (sectionsRef.current.services = el)}
       >
@@ -46,7 +31,7 @@ export const Homepage = () => {
         </S.WrapperServices>
       </Section>
       <Section
-        height={screenY.pictures}
+        height={height.pictures}
         picture="wallpaperPicture.jpg"
         sectionRef={(el) => (sectionsRef.current.pictures = el)}
       >
@@ -60,7 +45,7 @@ export const Homepage = () => {
       </Section>
 
       <Section
-        height={screenY.map}
+        height={height.map}
         sectionRef={(el) => (sectionsRef.current.map = el)}
       >
         <Flex $display="flex">

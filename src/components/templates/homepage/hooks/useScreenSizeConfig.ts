@@ -9,7 +9,7 @@ export type ScreenHeightConfig = {
 
 export const useScreenSizeConfig = () => {
   const { size } = useWindowSize();
-  const screenY = screenSizeConfig(size.width);
+  const height = screenSizeConfig(size.width);
 
   function screenSizeConfig(size: number): ScreenHeightConfig {
     if (size >= 340 && size <= 600) {
@@ -37,5 +37,5 @@ export const useScreenSizeConfig = () => {
       };
     }
   }
-  return { screenY };
+  return { height };
 };

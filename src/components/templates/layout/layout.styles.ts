@@ -65,12 +65,12 @@ export const WrapperText = styled.div`
   align-items: center;
 
   h1 {
-    font-size: 2.3rem;
+    font-size: 1.3rem;
   }
 
   p {
-    font-size: 1.5rem;
-    max-width: 500px;
+    font-size: 1.2rem;
+    max-width: 400px;
   }
 
   h1,
