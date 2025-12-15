@@ -71,21 +71,65 @@ export const PictureBarbershopWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 120px;
+  gap: 30px;
+
+  @media screen and (min-width: 992px) {
+    gap: 80px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    gap: 120px;
+  }
+`;
+
+export const TitlePicture = styled.h1`
+  color: white;
+  margin-top: 10px;
+  z-index: 20;
+  font-size: 30px;
+
+  @media screen and (min-width: 1200px) {
+    margin-top: 90px;
+    font-size: 50px;
+  }
+  @media screen and (min-width: 720px) {
+    font-size: 40px;
+    margin-top: 30px;
+  }
+`;
+export const TitleService = styled.h1`
+  margin-top: 30px;
+  font-size: 38px;
+  text-align: center;
+  font-weight: 800;
+
+  @media screen and (min-width: 1200px) {
+    margin-top: 30px;
+    font-size: 50px;
+  }
 `;
 
 export const WrapperServices = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 80px 500px;
   align-items: center;
+  padding: 10px 20px;
+
+  @media screen and (min-width: 1200px) {
+    padding: 80px 500px;
+
+    h1 {
+      font-size: 1.9rem;
+      text-align: center;
+    }
+  }
 
   h1 {
     color: #171d25;
     text-align: center;
     margin-top: 10px;
     text-transform: uppercase;
-    font-size: 1.9rem;
+    font-size: 1.1rem;
   }
 `;
 
@@ -108,6 +152,9 @@ export const WrapperWhatsaapInfo = styled.div`
 
   h1 {
     color: #fff;
-    font-size: 3rem;
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 1.5rem;
   }
 `;

@@ -62,17 +62,50 @@ export const WrapperText = styled.div`
   display: flex;
   position: absolute;
   flex-direction: column;
+  align-items: center;
 
   h1 {
-    font-size: 5rem;
+    font-size: 2.3rem;
   }
+
+  p {
+    font-size: 1.5rem;
+    max-width: 500px;
+  }
+
   h1,
   p {
     color: #ffff;
     text-align: center;
   }
 
-  p {
-    font-size: 1.8rem;
+  @media screen and (min-width: 600px) and (max-width: 720px) {
+    h1 {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 1.5rem;
+      max-width: 100%;
+    }
+  }
+
+  @media screen and (min-width: 992px) and (max-width: 1200px) {
+    h1 {
+      font-size: 2.4rem;
+    }
+    p {
+      font-size: 1.4rem;
+      max-width: 700px;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    h1 {
+      font-size: 4rem;
+    }
+    p {
+      font-size: 2rem;
+      max-width: 100%;
+    }
   }
 `;

@@ -10,6 +10,7 @@ import { Flex } from "../../../styles/commonStyles";
 import { pictures, services } from "../../../utils/utils";
 import { useEffect, useRef } from "react";
 import { useHeaderContext } from "../../../context/HeaderContext";
+import { useScreenSizeConfig } from "./hooks/useScreenSizeConfig";
 
 type SectionKey = "services" | "pictures" | "map" | "contact";
 
@@ -30,25 +31,27 @@ export const Homepage = () => {
     });
   }, [tab]);
 
+  const { screenY } = useScreenSizeConfig();
+
   return (
     <Layout title={title} subtitle={subtitle}>
       <Section
-        height="650px"
+        height={screenY.services}
         classname="section-services"
         sectionRef={(el) => (sectionsRef.current.services = el)}
       >
-        <h1 style={{ marginTop: 30, fontSize: 50 }}>Nossos Serviços</h1>
+        <S.TitleService>Nossos Serviços</S.TitleService>
         <S.WrapperServices>
           <Services data={services} />
         </S.WrapperServices>
       </Section>
       <Section
-        height="800px"
+        height={screenY.pictures}
         picture="wallpaperPicture.jpg"
         sectionRef={(el) => (sectionsRef.current.pictures = el)}
       >
         <Flex $display="flex" $flexDirection="column">
-          <h1 style={S.defaultStyleInline.pictureText}>Fotos</h1>
+          <S.TitlePicture>Fotos</S.TitlePicture>
           <S.Overlay $rgba="rgba(0, 0, 0, 0.9)" />
           <S.PictureBarbershopWrapper>
             <PictureBarbershop data={pictures} />
@@ -57,7 +60,7 @@ export const Homepage = () => {
       </Section>
 
       <Section
-        height="600px"
+        height={screenY.map}
         sectionRef={(el) => (sectionsRef.current.map = el)}
       >
         <Flex $display="flex">

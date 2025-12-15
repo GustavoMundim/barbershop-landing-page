@@ -10,7 +10,7 @@ export const Services = ({
       {data.map((label) => (
         <S.Info>
           <S.Dot>
-            <Icon fontSize={150} color="white" icon={label.ico} />
+            <Icon className="icos" color="white" icon={label.ico} />
           </S.Dot>
           <h1>{label.title}</h1>
         </S.Info>
