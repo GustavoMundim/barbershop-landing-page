@@ -7,8 +7,8 @@ export const Services = ({
 }) => {
   return (
     <>
-      {data.map((label) => (
-        <S.Info>
+      {data.map((label, index) => (
+        <S.Info key={index}>
           <S.Dot>
             <Icon className="icos" color="white" icon={label.ico} />
           </S.Dot>

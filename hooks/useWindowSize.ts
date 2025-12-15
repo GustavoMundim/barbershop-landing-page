@@ -20,6 +20,6 @@ export const useWindowSize = () => {
     }
     window.addEventListener("resize", handleSize);
     return () => window.removeEventListener("resize", handleSize);
-  });
+  }, []);
   return { size };
 };
